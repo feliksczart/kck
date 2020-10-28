@@ -7,13 +7,14 @@ from loader import Load
 
 def main():
 
-    img = Load.img('C:/Users/czart/Desktop/Studia/kck/lab4/res/zorosanji.png')
+    img = Load.img('res/dem.jpg')
     #io.imshow(img)
     #plt.show()
 
     #Filter.gray(img)
     #Filter.median(img)
-    Filter.gaussian(img)
+    #Filter.gaussian(img)
+    Filter.sobel(img)
 
 
 if __name__ == '__main__':

@@ -1,6 +1,7 @@
+import numpy as np
 from skimage import io
 from matplotlib import pyplot as plt
-from skimage.filters import median, gaussian
+from skimage.filters import median, gaussian, sobel
 from skimage.morphology import disk
 
 
@@ -26,4 +27,13 @@ class Filter:
         gaus_img = io.imread(img)
         gaus = gaussian(gaus_img, sigma=1)
         io.imshow(gaus)
+        plt.show()
+
+    @staticmethod
+    def sobel(img):
+        sobel_img = io.imread(img)
+        sobel_mag = np.sqrt(sum([sobel(sobel_img, axis=i) ** 2
+                                 for i in range(sobel_img.ndim)]) / sobel_img.ndim)
+        sob = sobel(sobel_img)
+        io.imshow(sob)
         plt.show()
