@@ -1,6 +1,4 @@
 import os
-from skimage import data_dir, io
-from matplotlib import pyplot as plt
 
 
 class Load:
