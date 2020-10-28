@@ -1,6 +1,7 @@
 import numpy as np
 from skimage import io
 from matplotlib import pyplot as plt
+from skimage.feature import canny
 from skimage.filters import median, gaussian, sobel
 from skimage.morphology import disk
 
@@ -32,8 +33,17 @@ class Filter:
     @staticmethod
     def sobel(img):
         sobel_img = io.imread(img)
-        sobel_mag = np.sqrt(sum([sobel(sobel_img, axis=i) ** 2
-                                 for i in range(sobel_img.ndim)]) / sobel_img.ndim)
         sob = sobel(sobel_img)
         io.imshow(sob)
+        plt.show()
+
+    @staticmethod
+    def canny(img):
+        img = io.imread(img)
+        canny_mag = np.sqrt(sum([sobel(img, axis=i) ** 2
+                                 for i in range(img.ndim)]) / img.ndim)
+
+        canny_img = io.imread(canny_mag)
+        can = canny(canny_img)
+        io.imshow(can)
         plt.show()
