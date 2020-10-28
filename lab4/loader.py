@@ -10,7 +10,4 @@ class Load:
     @staticmethod
     def img(file):
         img = os.path.join(data_dir, file)
-        #io.imshow(img)
-        #plt.show()
-        print(type(img))
         return img

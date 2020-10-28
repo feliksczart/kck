@@ -1,7 +1,7 @@
 from skimage import io
 from matplotlib import pyplot as plt
-from skimage.filters import median
-import numpy as np
+from skimage.filters import median, gaussian
+from skimage.morphology import disk
 
 
 class Filter:
@@ -16,6 +16,14 @@ class Filter:
 
     @staticmethod
     def median(img):
-        median_img = median(img, selem=np.ones((5, 5)))
-        io.imshow(median_img)
+        median_img = io.imread(img)
+        med = median(median_img)
+        io.imshow(med)
+        plt.show()
+
+    @staticmethod
+    def gaussian(img):
+        gaus_img = io.imread(img)
+        gaus = gaussian(gaus_img, sigma=1)
+        io.imshow(gaus)
         plt.show()
