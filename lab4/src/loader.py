@@ -7,5 +7,5 @@ class Load:
 
     @staticmethod
     def img(file):
-        img = os.path.join('C:/Users/czart/Desktop/Studia/kck/lab4/', file)
+        img = os.path.join('C:/Users/czart/Desktop/Studia/kck/lab4/res/', file)
         return img

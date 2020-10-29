@@ -1,11 +1,12 @@
 from skimage import io
-from filter import Filter
-from loader import Load
+
+from src.filter import Filter
+from src.loader import Load
 from matplotlib import pyplot as plt
 
 
 def main():
-    img = Load.img('res/samolot00.jpg')
+    img = Load.img('samolot00.jpg')
     io.imshow(img)
     plt.show()
 
@@ -15,7 +16,7 @@ def main():
     # Filter.sobel(img)
     # Filter.canny()
     # Filter.dilation(img)
-    # Filter.erosion(img)
+    Filter.erosion(img)
 
 
 if __name__ == '__main__':
