@@ -3,7 +3,7 @@ from skimage import io
 from src.filter import Filter
 from src.loader import Load
 from matplotlib import pyplot as plt
-#test git to drive
+#test git to drive2
 
 def main():
     img = Load.img('samolot00.jpg')
