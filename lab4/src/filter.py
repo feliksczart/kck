@@ -1,10 +1,14 @@
 import numpy as np
-from scipy import ndimage
-from skimage import io
+from matplotlib.pyplot import figure, subplot
+from scipy import ndimage, signal
+from skimage import io, img_as_float, data
 from matplotlib import pyplot as plt
 from skimage.feature import canny
 from skimage.filters import median, gaussian, sobel
 from skimage.morphology import dilation, erosion
+from skimage.filters.edges import convolve
+from ipykernel.pylab.backend_inline import flush_figures
+from ipywidgets import interact, interactive, fixed
 
 
 class Filter:
@@ -85,3 +89,17 @@ class Filter:
         ero = erosion(erosion_img)
         io.imshow(ero)
         plt.show()
+
+    @staticmethod
+    def contur3(img):
+        K = np.ones([3, 3])
+        K = K / sum(K)
+
+        def func(t=1):
+            res = convolve(img, K)
+            for t in range(0, t):
+                res = convolve(res, K)
+            io.imshow(res)
+            flush_figures()
+
+        interact(func, t=(1, 20, 1))
