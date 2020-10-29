@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 
 
 def main():
-    img = Load.img('res/zorosanji.png')
+    img = Load.img('res/samolot00.jpg')
     io.imshow(img)
     plt.show()
 
