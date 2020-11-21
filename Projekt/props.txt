@@ -1,0 +1,80 @@
+latwe0:
+dst: 135
+v: 1
+x: 0
+
+latwe1:
+dst: 135
+v: 1
+x: 1
+
+latwe2:
+dst: 135
+v: 0.5
+x: 2
+
+latwe3:
+dst: 135
+v: 0.5
+x: 3
+
+latwe4:
+dst: 135
+v: 0.5
+x: 4
+
+latwe5:
+dst: 135
+v: 1.25
+x: 5
+
+latwe6:
+dst: 135
+v: 1.25
+x: 6
+
+projekt10:
+dst: 150
+v: 2
+x: 10
+
+projekt11:
+dst: 150
+v: 2
+x: 11
+
+projekt12:
+dst: 156
+v: 1.5
+x: 12
+
+projekt13:
+dst: 156
+v: 1.25
+x: 13
+
+projekt14:
+dst: 158
+v: 2.75
+x: 14
+
+projekt15:
+dst: 150
+v: 2.0
+x: 15
+
+projekt16:
+dst: 150
+v: 2.25
+x: 16
+
+projekt17:
+dst: 157
+v: 1.25
+x: 17
+
+projekt18:
+dst: 170
+v: 2.25
+x: 18
+
