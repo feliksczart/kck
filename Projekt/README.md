@@ -1,5 +1,5 @@
 Funkcja adjust_gamma:  
-*image - obrazek 
+* image - obrazek 
 -gamma - wspolczynnik gamma
 Funkcja draw_easy:  
 Jest odpowiedzialna za znalezienie kontur, i przybliżenie obrazka   
