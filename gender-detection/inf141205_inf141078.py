@@ -12,7 +12,6 @@ import warnings
 warnings.simplefilter("ignore")
 
 def load_file(f):
-
     (sampling, signal) = scipy.io.wavfile.read(str(f))
     print(sampling)
     print(signal)
@@ -29,7 +28,6 @@ def expect(dir):
     return expectations
 
 def check():
-
     expectations = expect('trainall')
     #bedziemy wprowadzać uzyskane przez nas wyniki do tej listy
     our_whole_output = ['K', 'M', 'K', 'M', 'M', 'K', 'M', 'K', 'K', 'M', 'M', 'K', 'M', 'K', 'K', 'K', 'M', 'K', 'M', 'M', 'M', 'K', 'M', 'M', 'K', 'M', 'M', 'K', 'K', 'M', 'K', 'M', 'M', 'K', 'M', 'K', 'K', 'M', 'M', 'K', 'K', 'M', 'M', 'K', 'M', 'K', 'K', 'K', 'M', 'K', 'K', 'M', 'M', 'K', 'K', 'M', 'K', 'M', 'K', 'K', 'M', 'K', 'M', 'M', 'M', 'K', 'K', 'K', 'K', 'M', 'M', 'K', 'K', 'K', 'M', 'M', 'K', 'M', 'K', 'M', 'K', 'M', 'K', 'M', 'K', 'K', 'M', 'K', 'M', 'M', 'M']
