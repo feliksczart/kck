@@ -35,10 +35,8 @@ def detect_gender(sampling, signal):
 
     if fundamental <= 175:
       gender = 'M'
-    elif fundamental > 175:
-      gender = 'K'
     else:
-      gender = '-'
+      gender = 'K'
 
     return gender
 
