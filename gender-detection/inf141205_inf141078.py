@@ -19,21 +19,27 @@ def load_file(f):
 def detect_gender(sampling, signal):
     
     samples_count = len(signal)
-    duration = float(samples_count)/sampling
+    duration = samples_count/sampling
+    
     if not isinstance(signal[0], np.int16):
       signal = [s[0] for s in signal]
+                      #Bessel function
     signal = signal * kaiser(samples_count, 100)
 
-    spectrum = np.log(abs(np.fft.rfft(signal)))
-    hps = copy(spectrum)
-    for h in np.arange(2, 6):
-      dec = decimate(spectrum, h)
-      hps[:len(dec)] += dec
-    peak_start = 50 * duration
-    peak = np.argmax(hps[int(peak_start):])
-    fundamental = (peak_start + peak) / duration
+    spectrum = np.log(abs(fft.rfft(signal)))
+    spectrum_cp = copy(spectrum)
+    
+    for i in arange(2, 5):
+          #Downsample the signal after applying an anti-aliasing filter
+      d = decimate(spectrum, i)
+      spectrum_cp[:len(d)] += d
 
-    if fundamental <= 175:
+    peak_begin = int(90 * duration)
+    peak = argmax(spectrum_cp[peak_begin:])
+    fundamental_frequency = (peak_begin + peak) / duration
+    #Male between 85 - 180 Hz, Female between 165 - 255 Hz
+
+    if fundamental_frequency <= 172.5:
       gender = 'M'
     else:
       gender = 'K'
@@ -60,8 +66,8 @@ def our_results(dir):
 
     return results
           
-def check(our_results):
-    expectations = expect('trainall')
+def check(our_results,dir):
+    expectations = expect(dir)
     good = 0
     for i in range(len(expectations)):
         if our_results[i] == expectations[i]:
@@ -71,10 +77,11 @@ def check(our_results):
     print('Skuteczność działania naszego programu wynosi: '+str(good/len(expectations)*100)+'%')
 
 if __name__ == "__main__":
-    # sampling, signal = load_file(sys.argv[1])
-    # gender = detect_gender(sampling,signal)
-    # print(gender)
+    sampling, signal = load_file(sys.argv[1])
+    gender = detect_gender(sampling,signal)
+    print(gender)
 
     # Sprawdzenie skuteczności naszego programu
-    results = our_results('trainall')
-    check(results)
+    
+    # results = our_results('trainall')
+    # check(results,'trainall')
