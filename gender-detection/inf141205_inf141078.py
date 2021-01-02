@@ -24,7 +24,7 @@ def detect_gender(sampling, signal):
     if not isinstance(signal[0], np.int16):
       signal = [s[0] for s in signal]
                       #Bessel function
-    signal = signal * kaiser(samples_count, 100)
+    signal = signal * kaiser(samples_count, 50)
 
     spectrum = np.log(abs(fft.rfft(signal)))
     spectrum_cp = copy(spectrum)
@@ -74,7 +74,7 @@ def check(our_results,dir):
             good += 1
     
     print()
-    print('Skuteczność działania naszego programu wynosi: '+str(good/len(expectations)*100)+'%')
+    print('Skuteczność działania naszego programu wynosi: '+str(round(good/len(expectations)*100,2))+'%')
 
 if __name__ == "__main__":
     sampling, signal = load_file(sys.argv[1])
