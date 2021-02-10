@@ -1,4 +1,4 @@
-#Mesh detector
+# Mesh detector
 Projekt ten służy do wykrywania liczby oczek na kostce do gry. 
 Działa on w następujący sposób:
   
