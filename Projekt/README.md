@@ -7,3 +7,7 @@ Działa on w następujący sposób:
   • Następnie korzystając z wcześniej przygotowanych zbliżeń, rozpoznaje kształty kół i nakłada na zdjęcie kontury wielokąta przypominającego okrąg, w miejscu, gdzie dany kształt został wykryty.
         
   • Zaznaczone kontury kółek stanowią listę, której długość jest odpowiedzią, na to ile oczek zostało wyrzuconych. Za pomocą wcześniej przygotowanej listy współrzędnych środków przybliżeń na obszary, w których znajdują się kostki, program wie, gdzie na oryginalnym zdjęciu należy umieścić etykiety opisujące sumę oczek.
+
+
+# Sprawozdanie
+https://drive.google.com/file/d/1G61L9EuZWBdSKE0-xhmGSWhOW4kPm6wc/view?usp=sharing
